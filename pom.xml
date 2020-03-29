@@ -17,6 +17,7 @@
     <description>spring-boot-init</description>
     <modules>
         <module>springboot-hello</module>
+        <module>springboot-web</module>
     </modules>
 
     <properties>
