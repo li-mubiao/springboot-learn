@@ -13,7 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-hello</name>
     <packaging>jar</packaging>
-    <description>hello</description>
+    <description>这个作为Java最基础的语法</description>
 
 
 </project>
