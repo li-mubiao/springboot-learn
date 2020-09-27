@@ -1,7 +1,13 @@
 package com.lmb.springboot.web.controller;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,8 +29,12 @@ import java.util.stream.IntStream;
 @Slf4j
 public class HelloController {
 
+
     @RequestMapping("/hello")
-    public String hello(){
+    public String hello(@RequestBody Address address){
+
+        System.out.println(address.getJson().size());
+        System.out.println(address);
 
         return "hello-world";
     }

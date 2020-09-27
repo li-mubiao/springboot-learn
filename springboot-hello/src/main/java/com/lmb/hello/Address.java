@@ -2,6 +2,9 @@ package com.lmb.hello;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Copyright (C), 2020,
  * FileName: Address
@@ -13,4 +16,6 @@ import lombok.Data;
 @Data
 public class Address {
     private String address;
+
+    private List<String> json;
 }
