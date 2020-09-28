@@ -2,6 +2,10 @@ package com.lmb.hello;
 
 import lombok.Data;
 
+import java.beans.BeanInfo;
+import java.beans.IntrospectionException;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,4 +22,20 @@ public class Address {
     private String address;
 
     private List<String> json;
+
+    public static void main(String[] args) throws NoSuchMethodException, IntrospectionException {
+        Class<Address> addressClass = Address.class;
+        Object obj = addressClass.getMethod("setAddress",String.class).getDefaultValue();
+        System.out.println(obj);
+        //内省机制操作
+        BeanInfo beanInfo = Introspector.getBeanInfo(Address.class,Object.class);
+        System.out.println(beanInfo);
+        PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
+        System.out.println(propertyDescriptors);
+        for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
+            System.out.println(propertyDescriptor.getWriteMethod());
+        }
+
+
+    }
 }
