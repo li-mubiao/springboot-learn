@@ -11,8 +11,12 @@ import java.math.BigDecimal;
 public class TryCatchTest {
 
     public static void main(String[] args) {
-        boolean b = tryEx() == false;
-        System.out.println(b);
+        try{
+            boolean b = tryEx() == false;
+            System.out.println(b);
+        }catch (Exception e){
+            throw e;
+        }
     }
     static boolean tryEx(){
         try {
