@@ -3,11 +3,14 @@ package com.lmb.hello;
 import lombok.Data;
 
 import java.beans.BeanInfo;
+import java.beans.EventSetDescriptor;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
+import java.beans.MethodDescriptor;
 import java.beans.PropertyDescriptor;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * Copyright (C), 2020,
@@ -35,7 +38,12 @@ public class Address {
         for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
             System.out.println(propertyDescriptor.getWriteMethod());
         }
+        MethodDescriptor[] methodDescriptors = beanInfo.getMethodDescriptors();
+        Stream.of(methodDescriptors).forEach(System.out::println);
+        System.out.println("--===============");
+        EventSetDescriptor[] eventSetDescriptors = beanInfo.getEventSetDescriptors();
 
+        Stream.of(eventSetDescriptors).forEach(System.out::println);
 
     }
 }
