@@ -7,7 +7,7 @@ import java.util.concurrent.Semaphore;
  * @since 2020-11-06 11:41
  */
 public class SemaphoreTest {
-    private final static Semaphore permit = new Semaphore(1, true);
+    private final static Semaphore permit = new Semaphore(1,true);
 
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
@@ -19,10 +19,12 @@ public class SemaphoreTest {
         try {
             permit.acquire();
             System.out.println("xxxxx");
+//            int i =1/0;
+//            System.out.println("XXXX");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }finally {
-//            permit.release();
+            permit.release();
         }
     }
 }
