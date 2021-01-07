@@ -18,10 +18,11 @@ import java.util.concurrent.locks.Lock;
 public class Mutex implements Lock {
 
     private static class Sync extends AbstractQueuedSynchronizer {
+        @Override
         protected boolean isHeldExclusively() {
             return getState() == 1;
         }
-
+        @Override
         public boolean tryAcquire(int args) {
             if (compareAndSetState(0, 1)) {
                 setExclusiveOwnerThread(Thread.currentThread());
@@ -30,6 +31,7 @@ public class Mutex implements Lock {
             return false;
         }
 
+        @Override
         public boolean tryRelease(int release) {
             if (getState() == 0) {
                 throw new IllegalMonitorStateException();
