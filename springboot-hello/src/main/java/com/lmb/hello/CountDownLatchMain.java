@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -65,40 +66,79 @@ public class CountDownLatchMain {
 //        }
 //        System.out.println("两个子线程都执行完毕，继续执行主线程");
         countDownLatchTest3();
-
+//        final CountDownLatch latch = new CountDownLatch(2);
+//
+//        new Thread(){
+//            @Override
+//            public void run() {
+//                try {
+//                    System.out.println("子线程"+Thread.currentThread().getName()+"正在执行");
+//                    Thread.sleep(3000);
+//                    System.out.println("子线程"+Thread.currentThread().getName()+"执行完毕");
+//                    latch.countDown();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            };
+//        }.start();
+//
+//        new Thread(){
+//            @Override
+//            public void run() {
+//                try {
+//                    System.out.println("子线程"+Thread.currentThread().getName()+"正在执行");
+//                    Thread.sleep(3000);
+//                    System.out.println("子线程"+Thread.currentThread().getName()+"执行完毕");
+//                    latch.countDown();
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            };
+//        }.start();
+//
+//        try {
+//            System.out.println("等待2个子线程执行完毕...");
+//            latch.await();
+//            System.out.println("2个子线程已经执行完毕");
+//            System.out.println("继续执行主线程");
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
 
     private static void countDownLatchTest3() throws InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
         final CountDownLatch down = new CountDownLatch(10);
 
         for (int i = 0; i < 10; i++) {
             try {
-                if (i == 0) {
-                   throw new RuntimeException("xxxx");
 
-                }
                 executorService.execute(() -> {
 
                     try {
-                        Thread.sleep(10000L);
-                        System.out.println("XXxxxxxxxxxxxxxxxxxx");
+                        System.out.println("线程:"+Thread.currentThread().getName()+"正在执行");
+                        Thread.sleep(1000L);
+                        System.out.println("线程:"+Thread.currentThread().getName()+"执行完毕");
+
                     } catch (InterruptedException e) {
                         e.printStackTrace();
+                    }finally {
+                        down.countDown();
                     }
 
                 });
             } catch (Exception e) {
                 log.error(e.getMessage());
             } finally {
-                down.countDown();
+
             }
 
         }
         try {
+            System.out.println("等待线程执行");
             down.await();
-            System.out.println("结束" + down.getCount());
+            System.out.println("线程执行完毕");
 
         } catch (Exception e) {
 
