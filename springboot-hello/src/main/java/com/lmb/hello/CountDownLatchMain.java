@@ -107,7 +107,7 @@ public class CountDownLatchMain {
     }
 
 
-    private static void countDownLatchTest3() throws InterruptedException {
+    private static void countDownLatchTest3()  {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
         final CountDownLatch down = new CountDownLatch(10);
 
@@ -133,7 +133,6 @@ public class CountDownLatchMain {
             } finally {
 
             }
-
         }
         try {
             System.out.println("等待线程执行");
@@ -145,8 +144,6 @@ public class CountDownLatchMain {
         } finally {
             executorService.shutdown();
         }
-
-
     }
 
     private static void countDownLatchTest2() {
