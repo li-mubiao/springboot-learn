@@ -9,6 +9,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 11
@@ -22,12 +23,21 @@ public class ThreadPoolTest {
 
     public static void main(String args[]) throws InterruptedException {
 
+
+
+        AtomicInteger ctl = new AtomicInteger((-1 << 29)| 0);
+
+        int i = ctl.get() & ((1 << 29) - 1);
+
+
+        System.out.println(i);
+
         BlockingQueue<Runnable> queue = new ArrayBlockingQueue<>(100);
         ThreadFactory factory = r -> new Thread(r, "test-thread-pool");
         ThreadPoolExecutor executor = new ThreadPoolExecutor(5, 5,
                 0L, TimeUnit.SECONDS, queue, factory, new ThreadPoolExecutor.CallerRunsPolicy());
         while (true) {
-            executor.submit(() -> {
+            executor.execute(() -> {
                 try {
 //                    System.out.println(queue.size());
                     System.out.println(Thread.currentThread().getName() + "==========" + "执行任务");
