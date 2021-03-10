@@ -1,4 +1,4 @@
-package com.lmb.hello;
+package com.lmb.hello.proxy;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class TestAdvice {
 
     // 1. 定义 PointCut
-    @Pointcut("execution(* com.lmb.hello.TestServiceImpl.eatCarrot())")
+    @Pointcut("execution(* com.lmb.hello.proxy.TestServiceImpl.eatCarrot())")
     private void eatCarrot() {
     }
 

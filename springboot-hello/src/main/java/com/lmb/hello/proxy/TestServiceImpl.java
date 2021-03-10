@@ -1,4 +1,4 @@
-package com.lmb.hello;
+package com.lmb.hello.proxy;
 
 import org.springframework.stereotype.Component;
 

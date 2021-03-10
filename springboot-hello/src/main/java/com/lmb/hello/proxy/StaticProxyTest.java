@@ -1,17 +1,17 @@
-package com.lmb.hello;
+package com.lmb.hello.proxy;
 
 /**
- * 静态代理
  * @author 李木标 limubiao@i72.com
- * @since 2021-03-09 17:40
+ * @since 2021-03-09 18:09
  */
-public class Proxy implements Subject{
+public class StaticProxyTest implements Subject {
 
     private RealSubject realSubject;
 
-    public Proxy(RealSubject subject) {
+    public StaticProxyTest(RealSubject subject) {
         this.realSubject = subject;
     }
+
 
     @Override
     public void request() {
@@ -25,12 +25,17 @@ public class Proxy implements Subject{
         System.out.println("卖房后");
     }
 
+    @Override
+    public void test() {
+
+    }
+
     public static void main(String[] args) {
         // 被代理对象
         RealSubject subject = new RealSubject();
 
         // 代理
-        Proxy proxy = new Proxy(subject);
+        StaticProxyTest proxy = new StaticProxyTest(subject);
 
         // 代理请求
         proxy.request();
