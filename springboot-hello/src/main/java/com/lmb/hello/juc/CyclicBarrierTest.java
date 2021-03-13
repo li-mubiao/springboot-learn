@@ -1,4 +1,4 @@
-package com.lmb.hello;
+package com.lmb.hello.juc;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

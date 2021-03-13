@@ -1,4 +1,4 @@
-package com.lmb.hello;
+package com.lmb.hello.juc;
 
 import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;

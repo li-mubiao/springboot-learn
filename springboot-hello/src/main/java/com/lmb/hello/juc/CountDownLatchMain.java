@@ -1,4 +1,4 @@
-package com.lmb.hello;
+package com.lmb.hello.juc;
 
 import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
