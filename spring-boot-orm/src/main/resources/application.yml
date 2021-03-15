@@ -35,7 +35,7 @@ mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
   type-aliases-package: com.lmb.orm.entity
 
-#showSql
+
 logging:
   level:
     com:
@@ -50,7 +50,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: [ "health","prometheus" ]
+        include: [ "*" ]
   metrics:
     export:
       prometheus:
