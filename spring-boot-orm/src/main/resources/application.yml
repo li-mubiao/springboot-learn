@@ -1,0 +1,57 @@
+spring:
+  datasource:
+    url: jdbc:mysql://211.159.184.140:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: li19930205
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat,wall,log4j
+    dbcp2:
+      　　min-idle: 5         #数据库连接池的最小维持连接数
+      　　initial-size: 5     #初始化提供的连接数
+      　　max-total: 5          #最大的连接数
+      　　max-wait-millis: 200        #等待连接获取的最大超时时间
+
+  application:
+    name: orm
+  resources:
+    static-locations: [ "classpath:/Lib/" ]
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 50MB
+      max-request-size: 100MB
+  thymeleaf:
+    cache: false
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+server:
+  port: 8080
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.lmb.orm.entity
+
+#showSql
+logging:
+  level:
+    com:
+      example:
+        mapper : debug
+management:
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: [ "health","prometheus" ]
+  metrics:
+    export:
+      prometheus:
+        enabled: true
