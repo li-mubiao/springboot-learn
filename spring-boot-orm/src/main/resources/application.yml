@@ -32,7 +32,7 @@ spring:
 server:
   port: 8080
 mybatis:
-  mapper-locations: classpath:mapping/*Mapper.xml
+  mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.lmb.orm.entity
 
 

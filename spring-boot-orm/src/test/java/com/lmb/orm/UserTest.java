@@ -1,5 +1,6 @@
 package com.lmb.orm;
 
+import com.lmb.orm.entity.User;
 import com.lmb.orm.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +18,8 @@ public class UserTest {
 
     @Test
     public void testGet() {
-        userService.query(1);
+        User query = userService.query(1);
+        System.out.println(query);
     }
 
 
