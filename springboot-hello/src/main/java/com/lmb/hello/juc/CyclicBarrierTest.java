@@ -2,6 +2,8 @@ package com.lmb.hello.juc;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author 李木标 limubiao@i72.com
@@ -15,8 +17,24 @@ public class CyclicBarrierTest {
 //        for (int i = 0; i < N; i++) {
 //            new Writer(barrier).start();
 //        }
-        ClassLoader classLoader = CyclicBarrierTest.class.getClassLoader();
-        System.out.println(classLoader);
+//        ClassLoader classLoader = CyclicBarrierTest.class.getClassLoader();
+//        System.out.println(classLoader);
+
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(5);
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        for (int i = 0; i < 10; i++) {
+            executorService.execute(()->{
+                try {
+                    cyclicBarrier.await();
+                    cyclicBarrier.reset();
+                    System.out.println(Thread.currentThread().getName());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+
+
     }
 }
 
