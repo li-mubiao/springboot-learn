@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @MapperScan("com.lmb")
 public class OrmApplication {
 
+
     public static void main(String[] args) {
         SpringApplication.run(OrmApplication.class, args);
     }
