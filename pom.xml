@@ -18,6 +18,9 @@
     <modules>
         <module>springboot-hello</module>
         <module>springboot-web</module>
+        <module>spring-boot-orm</module>
+        <module>springmvc-hystrix</module>
+        <module>springcloud-dashboard</module>
     </modules>
 
     <properties>
@@ -29,7 +32,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>

@@ -1,0 +1,55 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+<!--  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      &lt;!&ndash;加载spring配置&ndash;&gt;
+&lt;!&ndash;      classpath:spring.xml&ndash;&gt;
+    </param-value>
+  </context-param>
+  <context-param>
+    <param-name>webAppRootKey</param-name>
+    <param-value>ServicePlatform.root</param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    &lt;!&ndash;<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>&ndash;&gt;
+  </listener>-->
+
+<!--  <servlet>
+    <servlet-name>spring-dispatcher</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      &lt;!&ndash;springmvc的配置文件&ndash;&gt;
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:spring-dispatcher.xml</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>spring-dispatcher</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>-->
+
+  <!--静态文件处理-->
+  <!--<com.jack.controller.servlet-mapping>
+    <com.jack.controller.servlet-name>default</com.jack.controller.servlet-name>
+    <url-pattern>*.css</url-pattern>
+  </com.jack.controller.servlet-mapping>
+  <com.jack.controller.servlet-mapping>
+    <com.jack.controller.servlet-name>default</com.jack.controller.servlet-name>
+    <url-pattern>*.gif</url-pattern>
+  </com.jack.controller.servlet-mapping>
+  <com.jack.controller.servlet-mapping>
+    <com.jack.controller.servlet-name>default</com.jack.controller.servlet-name>
+    <url-pattern>*.jpg</url-pattern>
+  </com.jack.controller.servlet-mapping>
+  <com.jack.controller.servlet-mapping>
+    <com.jack.controller.servlet-name>default</com.jack.controller.servlet-name>
+    <url-pattern>*.js</url-pattern>
+  </com.jack.controller.servlet-mapping>-->
+</web-app>
