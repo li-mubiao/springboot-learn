@@ -20,8 +20,6 @@ public class Dogs {
         dogs2.name = "scruffy";
         dogs1.says = "Ruff!";
         dogs2.says = "Wurf!";
-//        System.out.println("name"+dogs1.name+ "=========says"+dogs1.says);
-//        System.out.println("name"+dogs2.name+ "=========says"+dogs2.says);
         dogs3.name = dogs1.name;
         dogs3.says = dogs1.says;
         System.out.println(dogs1.name == dogs3.name);
