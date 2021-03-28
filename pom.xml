@@ -21,6 +21,8 @@
         <module>spring-boot-orm</module>
         <module>springmvc-hystrix</module>
         <module>springcloud-dashboard</module>
+        <module>dubbo-provider</module>
+        <module>dubbo-consumer</module>
     </modules>
 
     <properties>

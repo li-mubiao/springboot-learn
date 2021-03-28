@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: dubbo-consumer
+server:
+  port: 8889
+dubbo:
+  registry:
+    address: nacos://211.159.184.140:8848
+  consumer:
+    timeout: 1000
+  application:
+    name: dubbo-consumer
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.dubbo.consumer

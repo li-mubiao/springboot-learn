@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: dubbo-provider
+server:
+  port: 8888
+dubbo:
+  registry:
+    address: nacos://211.159.184.140:8848
+  application:
+    name: dubbo-provider
+  protocol:
+    name: dubbo
+    port: 20880
+  scan:
+    base-packages: com.dubbo.provider
