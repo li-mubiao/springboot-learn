@@ -22,7 +22,7 @@ import java.util.List;
 public class WhileTest {
 
     public static void main(String[] args) throws Exception {
-        String FILE_IN = "E:\\BaiduNetdiskDownload\\24-Java并发编程实战\\123";
+        String FILE_IN = "E:\\BaiduNetdiskDownload\\08-深入拆解Java虚拟机";
         File f = new File(FILE_IN);
         List<String> list = new ArrayList<String>();
         list = getFileList(f);
@@ -51,7 +51,7 @@ public class WhileTest {
                 @Override
                 public boolean accept(File file) {
                     if (file.isFile() && file.getName().indexOf("html") > -1) {
-                        System.out.println("<a href=\""+file.getAbsolutePath()+"\">"+file.getName()+"</a><br><br>");
+                        System.out.println("<a href=\"http://211.159.184.140/456/"+file.getName()+"\">"+file.getName()+"</a><br><br>");
                         return true;
                     } else {
                         getFileList(file);

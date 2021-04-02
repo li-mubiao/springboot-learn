@@ -3,8 +3,8 @@ package com.lmb.orm;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author 李木标 limubiao@i72.com
@@ -13,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan("com.lmb")
 @MapperScan("com.lmb")
+@EnableTransactionManagement
 public class OrmApplication {
 
 
