@@ -1,6 +1,8 @@
 package cn.enjoy.test;
 
+import cn.enjoy.service.AccountServiceImpl;
 import org.junit.Test;
+import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -13,6 +15,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class MyTest {
     @Test
     public void test1() {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("cn.enjoy");
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("cn.enjoy.service");
+        AccountServiceImpl bean = applicationContext.getBean(AccountServiceImpl.class);
+        System.out.println(bean);
     }
 }

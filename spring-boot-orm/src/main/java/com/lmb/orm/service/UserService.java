@@ -4,6 +4,7 @@ import com.lmb.orm.entity.User;
 import com.lmb.orm.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author 李木标 limubiao@i72.com
@@ -15,7 +16,9 @@ public class UserService {
     @Autowired
     private UserMapper userMapper;
 
+    @Transactional
     public User query(Integer id){
-        return userMapper.query(id);
+        User query = userMapper.query(id);
+        throw new RuntimeException("123");
     }
 }
