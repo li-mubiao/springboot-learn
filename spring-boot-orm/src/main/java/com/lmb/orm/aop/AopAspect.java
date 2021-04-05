@@ -23,6 +23,12 @@ public class AopAspect {
     public void pointcut() {
     }
 
+    @After("pointcut()")
+    public void after(){
+        System.out.println("After");
+
+    }
+
     @Before("pointcut()")
     public void before(){
 
@@ -30,11 +36,6 @@ public class AopAspect {
 
     }
 
-    @After("pointcut()")
-    public void after(){
-        System.out.println("After");
-
-    }
 
     @AfterReturning(value = "pointcut()",returning = "returnValue")
     public void afterReturning(Object returnValue){
@@ -50,9 +51,9 @@ public class AopAspect {
     @Around("pointcut()")
     public void around(ProceedingJoinPoint joinPoint) throws Throwable {
 
-        System.out.println("Around");
+        System.out.println("Around 前");
         Object proceed = joinPoint.proceed();
-        System.out.println("环绕后");
+        System.out.println("Around 后");
 
     }
 }
