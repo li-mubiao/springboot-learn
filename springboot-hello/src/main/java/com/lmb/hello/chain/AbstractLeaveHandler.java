@@ -1,6 +1,10 @@
 package com.lmb.hello.chain;
 
 /**
+ *
+ * 处理相关事务责任的一条执行链，执行链上有多个节点，每个节点都有机会处理事务，
+ * 如果节点处理完了就可以根据实际业务需求传递给下一个节点继续处理或者返回处理完毕
+ *
  * @program: cookbook
  * @description: 请假责任链抽象处理类
  * @author: Byron
