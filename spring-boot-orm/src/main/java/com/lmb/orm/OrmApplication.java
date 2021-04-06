@@ -1,8 +1,10 @@
 package com.lmb.orm;
 
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
@@ -18,7 +20,8 @@ public class OrmApplication {
 
 
     public static void main(String[] args) {
-        SpringApplication.run(OrmApplication.class, args);
+        ConfigurableApplicationContext run = SpringApplication.run(OrmApplication.class, args);
+        ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
     }
 
 }
