@@ -19,10 +19,9 @@
         <module>springboot-hello</module>
         <module>springboot-web</module>
         <module>spring-boot-orm</module>
-        <module>springmvc-hystrix</module>
-        <module>springcloud-dashboard</module>
         <module>dubbo-provider</module>
         <module>dubbo-consumer</module>
+        <module>springcloud-gateway</module>
     </modules>
 
     <properties>

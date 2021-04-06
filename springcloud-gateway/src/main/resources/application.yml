@@ -1,0 +1,22 @@
+server:
+    port: 18084
+
+spring:
+  application:
+    name: nacos-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: gateway-service
+          uri: lb://nacos-web-provider
+          predicates:
+            - Path=/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        server-addr: 211.159.184.140:8848
