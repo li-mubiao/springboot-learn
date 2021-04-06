@@ -31,10 +31,10 @@ public class HelloController {
 
 
     @RequestMapping("/hello")
-    public String hello(@RequestBody Address address){
-
-        System.out.println(address.getJson().size());
-        System.out.println(address);
+    public String hello(){
+//
+//        System.out.println(address.getJson().size());
+//        System.out.println(address);
 
         return "hello-world";
     }

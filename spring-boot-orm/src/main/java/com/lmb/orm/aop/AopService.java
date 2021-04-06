@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class AopService {
 
     @AopCheck
-    public void aopOrder(){
+    public void aopOrder() {
         System.out.println("执行业务逻辑");
     }
 
