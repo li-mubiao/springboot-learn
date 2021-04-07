@@ -18,7 +18,6 @@ public class UserService {
 
     @Transactional
     public User query(Integer id){
-        User query = userMapper.query(id);
-        throw new RuntimeException("123");
+        return userMapper.query(id);
     }
 }

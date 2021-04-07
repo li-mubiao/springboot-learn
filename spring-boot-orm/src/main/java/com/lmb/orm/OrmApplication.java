@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @SpringBootApplication
 @ComponentScan("com.lmb")
-@MapperScan("com.lmb")
+@MapperScan("com.lmb.orm.mapper")
 @EnableTransactionManagement
 public class OrmApplication {
 
