@@ -1,10 +1,10 @@
 package com.lmb.hello.thread;
 
-import lombok.val;
+import lombok.Data;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.Future;
 
 /**
  * Copyright (C), 2021,

@@ -1,7 +1,6 @@
 package com.dubbo.consumer;
 
 import com.dubbo.provider.NacosDubboService;
-import jdk.nashorn.internal.ir.annotations.Reference;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.stereotype.Service;
 
