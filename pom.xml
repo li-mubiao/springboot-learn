@@ -22,6 +22,8 @@
         <module>dubbo-provider</module>
         <module>dubbo-consumer</module>
         <module>springcloud-gateway</module>
+        <module>alibaba-nacos-discovery-server</module>
+        <module>alibaba-nacos-discovery-client-common</module>
     </modules>
 
     <properties>
