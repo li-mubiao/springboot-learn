@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+#server:
+#  # 端口
+#    port: 8080
+#
+#spring:
+#  application:
+#    name: nacos-web-provider
+#  cloud:
+#    nacos:
+#      discovery:
+#        # 指定nacos server的地址
+#        server-addr: 211.159.184.140:8848
+#
