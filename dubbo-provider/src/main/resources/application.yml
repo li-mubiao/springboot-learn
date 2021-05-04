@@ -1,6 +1,14 @@
 spring:
   application:
     name: dubbo-provider
+  rabbitmq:
+    host: 211.159.184.140
+    port: 5672
+    username: admin
+    password: admin
+    #消息確認配置項
+    publisher-confirms: true
+    publisher-returns: true
 server:
   port: 8888
 dubbo:

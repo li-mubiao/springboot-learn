@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: nacos-web-provider
+    name: orm
   cloud:
     nacos:
       discovery:

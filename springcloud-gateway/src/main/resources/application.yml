@@ -12,11 +12,17 @@ spring:
           lower-case-service-id: true
       routes:
         - id: gateway-service
-          uri: lb://nacos-web-provider
+          uri: lb://web
           predicates:
             - Path=/**
           filters:
             - StripPrefix=1
+        - id: orm-service
+          uri: lb://orm
+          predicates:
+            - Path=/**
+          filters:
+            - StripPrefix=0
     nacos:
       discovery:
         server-addr: 211.159.184.140:8848
