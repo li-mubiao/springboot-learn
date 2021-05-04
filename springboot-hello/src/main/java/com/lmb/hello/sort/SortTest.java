@@ -1,8 +1,5 @@
 package com.lmb.hello.sort;
 
-import javafx.scene.control.TableRow;
-import sun.java2d.pipe.SpanIterator;
-
 import java.util.Arrays;
 
 /**

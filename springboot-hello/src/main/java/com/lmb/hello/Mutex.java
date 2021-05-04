@@ -1,7 +1,5 @@
 package com.lmb.hello;
 
-import com.sun.org.apache.regexp.internal.RE;
-
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;

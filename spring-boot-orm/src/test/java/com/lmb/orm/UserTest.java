@@ -2,6 +2,7 @@ package com.lmb.orm;
 
 import com.lmb.orm.entity.User;
 import com.lmb.orm.service.UserService;
+import com.lmb.orm.strategy.Strategy;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ public class UserTest {
         User query = userService.query(1);
         System.out.println(query);
     }
+
+
 
 
 }

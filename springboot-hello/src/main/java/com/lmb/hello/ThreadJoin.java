@@ -1,7 +1,5 @@
 package com.lmb.hello;
 
-import java.util.concurrent.TimeUnit;
-
 /**
  * Copyright (C), 2020,
  * FileName: ThreadState

@@ -8,7 +8,6 @@ import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.MethodDescriptor;
 import java.beans.PropertyDescriptor;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -28,10 +27,10 @@ public class Address {
 
     public static void main(String[] args) throws NoSuchMethodException, IntrospectionException {
         Class<Address> addressClass = Address.class;
-        Object obj = addressClass.getMethod("setAddress",String.class).getDefaultValue();
+        Object obj = addressClass.getMethod("setAddress", String.class).getDefaultValue();
         System.out.println(obj);
         //内省机制操作
-        BeanInfo beanInfo = Introspector.getBeanInfo(Address.class,Object.class);
+        BeanInfo beanInfo = Introspector.getBeanInfo(Address.class, Object.class);
         System.out.println(beanInfo);
         PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
         System.out.println(propertyDescriptors);

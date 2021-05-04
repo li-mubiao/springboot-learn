@@ -1,6 +1,5 @@
 package com.lmb.hello.juc;
 
-import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
