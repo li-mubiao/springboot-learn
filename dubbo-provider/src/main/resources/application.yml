@@ -21,3 +21,8 @@ dubbo:
     port: 20880
   scan:
     base-packages: com.dubbo.provider
+#nacos dubbo-admin group 注意配置组的问题
+#  admin.registry.group=DEFAULT_GROUP
+#  admin.config-center.group=DEFAULT_GROUP
+#  admin.metadata-report.group=DEFAULT_GROUP
+
