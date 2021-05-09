@@ -6,6 +6,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 
 /**
+ * 单例模式
  * 饿汉式
  */
 public class IdGenerator {

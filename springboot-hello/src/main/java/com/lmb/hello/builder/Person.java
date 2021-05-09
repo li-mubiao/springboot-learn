@@ -2,6 +2,9 @@ package com.lmb.hello.builder;
 
 import lombok.ToString;
 
+/**
+ * 建造者模式
+ */
 @ToString
 public class Person {
     private String name;

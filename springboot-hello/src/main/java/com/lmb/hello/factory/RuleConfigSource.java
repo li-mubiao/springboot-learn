@@ -5,6 +5,9 @@ import com.google.common.collect.Maps;
 
 import java.util.Map;
 
+/**
+ * 工厂模式
+ */
 public class RuleConfigSource {
     public RuleConfig load(String ruleConfigFilePath) throws InvalidRuleConfigException {
         String ruleConfigFileExtension = getFileExtension(ruleConfigFilePath);
