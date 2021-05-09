@@ -42,10 +42,6 @@ public class DirectRabbitConfig {
 
 
 
-    @Bean
-    DirectExchange lonelyDirectExchange() {
-        return new DirectExchange("lonelyDirectExchange");
-    }
 
 
 
