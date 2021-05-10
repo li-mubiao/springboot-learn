@@ -12,7 +12,7 @@ import java.lang.reflect.Proxy;
  * Description: TODO
  * Version:1.0.0
  */
-public class ProxyFactory {
+public class ProxyFactory implements InvocationHandler{
 
     /**
      * 目标对象
@@ -42,11 +42,22 @@ public class ProxyFactory {
     }
 
     public static void main(String[] args) {
-        RealSubject realSubject = new RealSubject();
-        System.out.println(realSubject.getClass());
-        Subject subject = (Subject) new ProxyFactory(realSubject).getProxyInstance();
-        System.out.println("==="+subject.getClass());
-        subject.request();
+        Subject subject = new RealSubject();
+
+        System.out.println(subject.getClass());
+
+        InvocationHandler handler = new ProxyFactory(subject);
+
+        ClassLoader cl = subject.getClass().getClassLoader();
+
+        Subject proxy = (Subject) Proxy.newProxyInstance(cl, new Class[]{Subject.class}, handler);
+        proxy.request();
+        System.out.println("===proxy"+proxy.getClass());
     }
 
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        Object result = method.invoke(this.target, args);
+        return result;
+    }
 }
