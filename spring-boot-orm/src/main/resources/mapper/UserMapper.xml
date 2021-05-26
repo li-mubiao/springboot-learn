@@ -4,13 +4,11 @@
 
     <resultMap id="BaseResultMap" type="com.lmb.orm.entity.User">
         <result column="id" jdbcType="INTEGER" property="id"/>
-        <result column="userName" jdbcType="VARCHAR" property="userName"/>
-        <result column="passWord" jdbcType="VARCHAR" property="passWord"/>
-        <result column="realName" jdbcType="VARCHAR" property="realName"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="age" jdbcType="INTEGER" property="age"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
     </resultMap>
 
-    <select id="query" resultType="com.lmb.orm.entity.User">
-        select * from user where id = #{id}
-    </select>
+
 
 </mapper>

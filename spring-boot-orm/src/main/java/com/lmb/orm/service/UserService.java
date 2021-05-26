@@ -1,5 +1,7 @@
 package com.lmb.orm.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.lmb.orm.entity.User;
 import com.lmb.orm.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +15,21 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserService {
 
+
+    private final UserMapper userMapper;
+
+
     @Autowired
-    private UserMapper userMapper;
+    public UserService(UserMapper userMapper){
+        this.userMapper=userMapper;
+    }
 
     @Transactional
     public User query(Integer id){
-        return userMapper.query(id);
+
+        LambdaQueryWrapper<User> userLambdaQueryWrapper = Wrappers.lambdaQuery();
+        userLambdaQueryWrapper
+                .eq(User::getId, id);
+        return userMapper.selectOne(userLambdaQueryWrapper);
     }
 }

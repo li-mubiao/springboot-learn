@@ -9,6 +9,7 @@ import java.beans.Introspector;
 import java.beans.MethodDescriptor;
 import java.beans.PropertyDescriptor;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -26,23 +27,12 @@ public class Address {
     private List<String> json;
 
     public static void main(String[] args) throws NoSuchMethodException, IntrospectionException {
-        Class<Address> addressClass = Address.class;
-        Object obj = addressClass.getMethod("setAddress", String.class).getDefaultValue();
-        System.out.println(obj);
-        //内省机制操作
-        BeanInfo beanInfo = Introspector.getBeanInfo(Address.class, Object.class);
-        System.out.println(beanInfo);
-        PropertyDescriptor[] propertyDescriptors = beanInfo.getPropertyDescriptors();
-        System.out.println(propertyDescriptors);
-        for (PropertyDescriptor propertyDescriptor : propertyDescriptors) {
-            System.out.println(propertyDescriptor.getWriteMethod());
-        }
-        MethodDescriptor[] methodDescriptors = beanInfo.getMethodDescriptors();
-        Stream.of(methodDescriptors).forEach(System.out::println);
-        System.out.println("--===============");
-        EventSetDescriptor[] eventSetDescriptors = beanInfo.getEventSetDescriptors();
-
-        Stream.of(eventSetDescriptors).forEach(System.out::println);
+        Stream.of("one", "two", "three", "four")
+                         .filter(e -> e.length() > 3)
+                         .peek(e -> System.out.println("Filtered value: " + e))
+                         .map(String::toUpperCase)
+                         .peek(e -> System.out.println("Mapped value: " + e))
+                         .collect(Collectors.toList());
 
     }
 }

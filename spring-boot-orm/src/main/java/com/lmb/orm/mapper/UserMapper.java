@@ -1,5 +1,6 @@
 package com.lmb.orm.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lmb.orm.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,7 +9,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2021-03-15 14:06
  */
 @Mapper
-public interface UserMapper {
-
-    User query(int id);
+public interface UserMapper extends BaseMapper<User> {
 }

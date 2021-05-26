@@ -21,7 +21,6 @@ public class OrmApplication {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext run = SpringApplication.run(OrmApplication.class, args);
-        ConfigurableListableBeanFactory beanFactory = run.getBeanFactory();
     }
 
 }
