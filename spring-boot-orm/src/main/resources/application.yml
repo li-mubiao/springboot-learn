@@ -34,16 +34,21 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
 server:
   port: 8080
-mybatis:
+
+mybatis-plus:
   mapper-locations: classpath:mapper/*Mapper.xml
   type-aliases-package: com.lmb.orm.entity
+  type-handlers-package: com.lmb.orm.handler
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      logic-delete-field: delete
 
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
-logging:
-  level:
-    com:
-      example:
-        mapper : debug
 management:
   endpoint:
     prometheus:

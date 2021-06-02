@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lmb.orm.mapper.UserMapper">
-
-    <resultMap id="BaseResultMap" type="com.lmb.orm.entity.User">
-        <result column="id" jdbcType="INTEGER" property="id"/>
-        <result column="name" jdbcType="VARCHAR" property="name"/>
-        <result column="age" jdbcType="INTEGER" property="age"/>
-        <result column="email" jdbcType="VARCHAR" property="email"/>
-    </resultMap>
+    
+    <sql id="base_column">
+        id,name,age,email
+    </sql>
 
 
+    <select id="queryByName" resultType="com.lmb.orm.entity.User">
+        select <include refid="base_column"/>
+        from
+        user where name =#{name}
+    </select>
 
 </mapper>

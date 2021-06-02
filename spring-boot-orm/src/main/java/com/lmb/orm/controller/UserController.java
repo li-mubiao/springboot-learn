@@ -19,7 +19,6 @@ public class UserController {
     private UserService userService;
     @PostMapping("query")
     public User query(){
-        return userService.query(1);
-
+        return userService.queryById(1);
     }
 }
