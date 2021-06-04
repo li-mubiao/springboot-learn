@@ -20,7 +20,9 @@ public class OrmApplication {
 
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext run = SpringApplication.run(OrmApplication.class, args);
+        System.out.println("The service to start");
+        SpringApplication.run(OrmApplication.class, args);
+        System.out.println("The service to started");
     }
 
 }
