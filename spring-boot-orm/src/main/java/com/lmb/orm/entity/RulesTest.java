@@ -1,5 +1,6 @@
 package com.lmb.orm.entity;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -31,7 +32,7 @@ public class RulesTest {
 
     private String sysName;
 
-    private JSONObject rules;
+    private JSONArray rules;
 
     private LocalDateTime date;
 

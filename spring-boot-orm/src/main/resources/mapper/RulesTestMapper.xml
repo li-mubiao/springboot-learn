@@ -10,7 +10,7 @@
         <id column="id" property="id" jdbcType="INTEGER" />
         <result column="sys_name" property="sysName" jdbcType="VARCHAR" />
         <!--将json类型的rules字段修改为如下形式-->
-        <result column="rules" property="rules" typeHandler="com.lmb.orm.handler.MySqlJsonHandler" />
+        <result column="rules" property="rules" typeHandler="com.lmb.orm.handler.MySqlJsonArrayHandler" />
         <result column="date" property="date" jdbcType="TIMESTAMP" />
     </resultMap>
 
@@ -21,7 +21,7 @@
         -->
         insert into rules_test (id, sys_name, rules,
         date)
-        values (#{id,jdbcType=INTEGER}, #{sysName,jdbcType=VARCHAR}, #{rules,jdbcType=OTHER,typeHandler=com.lmb.orm.handler.MySqlJsonHandler},
+        values (#{id,jdbcType=INTEGER}, #{sysName,jdbcType=VARCHAR}, #{rules,jdbcType=OTHER,typeHandler=com.lmb.orm.handler.MySqlJsonArrayHandler},
         #{date,jdbcType=TIMESTAMP})
     </insert>
 
